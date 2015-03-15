@@ -74,7 +74,7 @@ invokeHistoricalChart = function(){
 
 getCurrentDate = function(isCurrentDate){
 
-    var dd = today.getDate();
+    var dd = today.getDate()-1; // to be on the safe side, exchange rate is not available in the morning
     var mm = today.getMonth()+1; 
     var yyyy = today.getFullYear();
 

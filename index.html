@@ -17,23 +17,34 @@
     <span class="mainText">{{ toCurrencyAmount}}  {{ toCurrency.name}} </span>
     </div>
 
+<div class="la">
 <table>
   <tr>
-    <td> <input type="text" name="fromCurrencyAmount" ng-model="fromCurrencyAmount" ng-keyup="changeFrom($event)"/>
-      <br/>
-      <input type="text" name="toCurrencyAmount"  ng-model="toCurrencyAmount" ng-keyup="changeTo($event)" />
+    <td>
+       <input type="text" name="fromCurrencyAmount" ng-model="fromCurrencyAmount" ng-keyup="changeFrom($event)"/>  
     </td>
     <td>  
       <select ng-model="fromCurrency" 
           ng-options="currency as currency.name for currency in currenciesList | orderBy: 'name'">
-     </select><br/>
+     </select>
+   </td>
+   </tr>  
+  <tr>
+    <td> 
+       <input type="text" name="toCurrencyAmount"  ng-model="toCurrencyAmount" ng-keyup="changeTo($event)" />
+    </td>
+    <td>  
       <select ng-model="toCurrency" 
           ng-options="currency as currency.name for currency in currenciesList | orderBy: 'name'">
      </select>
    </td>
-    <td>  <canvas id="ratesChart" width="300" height="200"></canvas></td>
    </tr>  
 </table>  
+</div>
+
+<div class="ra">
+<canvas id="ratesChart" width="300" height="200"></canvas>  
+</div>
 
 </div>
 
