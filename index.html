@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+ <html lang="en" ng-app="Currency"> 
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Ah la google converter</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="app.css">
+</head>
+<body ng-controller="currenciesCtrl">
+
+
+<div id="container">
+    <div id="infoContainer" ng-show="rate">
+    <span class="subText">{{ fromCurrencyAmount}} {{ fromCurrency.name}}  equals</span> <br/>
+    <span class="mainText">{{ toCurrencyAmount}}  {{ toCurrency.name}} </span>
+    </div>
+
+    <input type="text" name="fromCurrencyAmount" ng-model="fromCurrencyAmount" ng-keyup="changeFrom($event)"/>
+     <select ng-model="fromCurrency" 
+          ng-options="currency as currency.name for currency in currenciesList | orderBy: 'name'">
+     </select>
+
+
+    <br/>
+    <input type="text" name="toCurrencyAmount"  ng-model="toCurrencyAmount" ng-keyup="changeTo($event)" />
+     <select ng-model="toCurrency" 
+          ng-options="currency as currency.name for currency in currenciesList | orderBy: 'name'">
+     </select>
+
+   <canvas id="ratesChart" width="400" height="200"></canvas>
+
+</div>
+
+  <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.3.4/angular.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+  <script src="scripts/app.js"></script>
+  <script src="scripts/controllers/currencies.js"></script>
+  <script src="scripts/Chart.js"></script>
+</body>
+</html>

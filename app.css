@@ -1,0 +1,70 @@
+/* app css stylesheet */
+
+
+body 
+{
+
+  font-family: arial,sans-serif;
+
+}
+
+
+#container
+{
+
+  margin-top:50px;
+  margin-left:50px;
+  padding:10px;
+  box-shadow: 0px 0px 10px #878787;
+  width:600px;
+}
+
+
+#infoContainer
+{
+  margin-bottom:10px;
+}
+
+input[type="text"] {
+  text-align: right;
+  color:#878787;
+}
+
+.subText{
+  color: #878787 !important;
+  font-size: medium !important;
+}
+
+.mainText{
+  font-size: xx-large !important;
+}
+
+
+.menu {
+  list-style: none;
+  border-bottom: 0.1em solid black;
+  margin-bottom: 2em;
+  padding: 0 0 0.5em;
+}
+
+.menu:before {
+  content: "[";
+}
+
+.menu:after {
+  content: "]";
+}
+
+.menu > li {
+  display: inline;
+}
+
+.menu > li:before {
+  content: "|";
+  padding-right: 0.3em;
+}
+
+.menu > li:nth-child(1):before {
+  content: "";
+  padding: 0;
+}
